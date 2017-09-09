@@ -10,22 +10,24 @@
     <RadioGroup
         android:id="@+id/rgCities"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"/>
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorPrimaryDark"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp"
-        android:layout_alignTop="@id/rgCities"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/rgCities"/>
 
     <Spinner
         android:id="@+id/spinnerPeriods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/line"
+        android:layout_below="@+id/line"
         android:layout_marginTop="10dp"/>
 
     <GridView
@@ -33,7 +35,7 @@
         android:numColumns="5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/spinnerPeriods"
+        android:layout_below="@id/spinnerPeriods"
         android:layout_marginTop="20dp" />
 
     <android.support.design.widget.FloatingActionButton

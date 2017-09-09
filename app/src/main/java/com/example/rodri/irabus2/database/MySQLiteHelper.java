@@ -112,9 +112,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         String[] limeiraIracemapolisSundayAndHolidays = context.getResources()
                 .getStringArray(R.array.limeira_iracemapolis_sunday_and_holidays);
 
-        String FILL_CITIES = "INSERT INTO " + TABLE_CITY + " VALUES ('Iracemapolis'), ('Limeira');";
-        String FILL_PERIODS = "INSERT INTO " + TABLE_PERIOD +
-                " VALUES ('Monday to Friday', 'Saturday', 'Sunday and Holidays');";
+        String FILL_CITIES = "INSERT INTO " + TABLE_CITY + " (" + KEY_NAME + ") VALUES ('Iracemapolis'), ('Limeira');";
+        String FILL_PERIODS = "INSERT INTO " + TABLE_PERIOD + " (" + KEY_NAME + ")" +
+                " VALUES ('Monday to Friday'), ('Saturday'), ('Sunday and Holidays');";
         String FILL_CITY_PERIODS = "INSERT INTO " + TABLE_CITY_PERIOD + " (" + COLUMN_CITY_ID + "" +
                 ", " + COLUMN_PERIOD_ID + ") VALUES (1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3);";
 
