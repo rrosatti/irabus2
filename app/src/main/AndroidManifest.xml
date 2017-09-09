@@ -15,10 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme">
-        </activity>
-
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.BusScheduleActivity"
+            android:label="@string/title_activity_bus_schedule"
+            android:theme="@style/SplashTheme"></activity>
     </application>
 
 </manifest>

@@ -205,5 +205,6 @@
         <item>22:15</item>
         <item>23:15</item>
     </string-array>
+    <string name="title_activity_bus_schedule">BusScheduleActivity</string>
 
 </resources>

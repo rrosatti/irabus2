@@ -5,11 +5,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.rodri.irabus2.R;
+import com.example.rodri.irabus2.helpers.Utils;
+
 /**
  * Created by rodri on 3/10/2017.
  */
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
+
+    private Context context;
+    private SQLiteDatabase db;
 
     // Database name
     private static final String DATABASE_NAME = "irabus.db";
@@ -69,14 +75,17 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        this.db = db;
         db.execSQL(CREATE_TABLE_CITY);
         db.execSQL(CREATE_TABLE_PERIOD);
         db.execSQL(CREATE_TABLE_CITY_PERIOD);
         db.execSQL(CREATE_TABLE_CITY_PERIOD_SCHEDULE);
+        fillDatabase();
     }
 
     @Override
@@ -86,6 +95,51 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         if (newVersion > oldVersion) {
             // Do something
+        }
+    }
+
+    private void fillDatabase() {
+        String[] iracemapolisLimeiraMondayToFriday = context.getResources()
+                .getStringArray(R.array.iracemapolis_limeira_monday_to_friday);
+        String[] iracemapolisLimeiraSaturday = context.getResources()
+                .getStringArray(R.array.iracemapolis_limeira_saturday);
+        String[] iracemapolisLimeiraSundayAndHolidays = context.getResources()
+                .getStringArray(R.array.iracemapolis_limeira_sunday_and_holidays);
+        String[] limeiraIracemapolisMondayToFriday = context.getResources()
+                .getStringArray(R.array.limeira_iracemapolis_monday_to_saturday);
+        String[] limeiraIracemapolisSaturday = context.getResources()
+                .getStringArray(R.array.limeira_iracemapolis_saturday);
+        String[] limeiraIracemapolisSundayAndHolidays = context.getResources()
+                .getStringArray(R.array.limeira_iracemapolis_sunday_and_holidays);
+
+        String FILL_CITIES = "INSERT INTO " + TABLE_CITY + " VALUES ('Iracemapolis'), ('Limeira');";
+        String FILL_PERIODS = "INSERT INTO " + TABLE_PERIOD +
+                " VALUES ('Monday to Friday', 'Saturday', 'Sunday and Holidays');";
+        String FILL_CITY_PERIODS = "INSERT INTO " + TABLE_CITY_PERIOD + " (" + COLUMN_CITY_ID + "" +
+                ", " + COLUMN_PERIOD_ID + ") VALUES (1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3);";
+
+        db.execSQL(FILL_CITIES);
+        db.execSQL(FILL_PERIODS);
+        db.execSQL(FILL_CITY_PERIODS);
+
+        fillCityPeriodSchedule(iracemapolisLimeiraMondayToFriday, 1);
+        fillCityPeriodSchedule(iracemapolisLimeiraSaturday, 2);
+        fillCityPeriodSchedule(iracemapolisLimeiraSundayAndHolidays, 3);
+        fillCityPeriodSchedule(limeiraIracemapolisMondayToFriday, 4);
+        fillCityPeriodSchedule(limeiraIracemapolisSaturday, 5);
+        fillCityPeriodSchedule(limeiraIracemapolisSundayAndHolidays, 6);
+
+    }
+
+    private void fillCityPeriodSchedule(String[] schedule, int scheduleId) {
+        int n = schedule.length;
+        Utils utils = new Utils();
+
+        for (int i = 0; i<n; i++) {
+            String FILL_CITY_PERIOD_SCHEDULE = "INSERT INTO " + TABLE_CITY_PERIOD_SCHEDULE +
+                    " (" + COLUMN_CITY_PERIOD_ID + ", " + COLUMN_TIME + ") VALUES" +
+                    " (" + scheduleId + ", " + utils.convertFromTimeToMilliseconds(schedule[i]) + ");";
+            db.execSQL(FILL_CITY_PERIOD_SCHEDULE);
         }
     }
 }
