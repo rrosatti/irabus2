@@ -3,49 +3,88 @@
 
     <!-- Bus Schedule -->
     <string-array name="iracemapolis_limeira_monday_to_friday">
-        <item>05:00</item><item>05:20</item><item>05:40</item>
-        <item>06:00</item><item>06:10</item><item>06:20</item><item>06:40</item>
-        <item>07:00</item><item>07:20</item><item>07:30</item><item>07:40</item>
-        <item>08:00</item><item>08:20</item><item>08:40</item>
-        <item>09:00</item><item>09:40</item>
-        <item>10:20</item>
-        <item>11:00</item><item>11:20</item>
-        <item>12:00</item><item>12:20</item><item>12:40</item>
-        <item>13:00</item><item>13:20</item>
-        <item>14:00</item><item>14:40</item>
-        <item>15:00</item><item>15:20</item>
-        <item>16:00</item><item>16:20</item><item>16:40</item>
-        <item>17:00</item><item>17:20</item><item>17:40</item>
-        <item>18:00</item><item>18:30</item>
-        <item>19:00</item><item>19:40</item>
-        <item>20:20</item>
-        <item>21:00</item><item>21:40</item>
-        <item>22:10</item><item>22:45</item>
-    </string-array>
-    
-    <string-array name="iracemapolis_limeira_saturday">
-        <item>05:00</item><item>05:40</item>
+        <item>05:00</item>
+        <item>05:20</item>
+        <item>05:40</item>
+        <item>06:00</item>
+        <item>06:10</item>
         <item>06:20</item>
-        <item>07:00</item><item>07:20</item><item>07:40</item>
-        <item>08:20</item><item>08:40</item>
-        <item>09:00</item><item>09:40</item>
-        <item>10:20</item><item>10:40</item>
-        <item>11:00</item><item>11:20</item><item>11:40</item>
-        <item>12:00</item><item>12:20</item><item>12:40</item>
-        <item>13:00</item><item>13:20</item>
+        <item>06:40</item>
+        <item>07:00</item>
+        <item>07:20</item>
+        <item>07:30</item>
+        <item>07:40</item>
+        <item>08:00</item>
+        <item>08:20</item>
+        <item>08:40</item>
+        <item>09:00</item>
+        <item>09:40</item>
+        <item>10:20</item>
+        <item>11:00</item>
+        <item>11:20</item>
+        <item>12:00</item>
+        <item>12:20</item>
+        <item>12:40</item>
+        <item>13:00</item>
+        <item>13:20</item>
+        <item>14:00</item>
+        <item>14:40</item>
+        <item>15:00</item>
+        <item>15:20</item>
+        <item>16:00</item>
+        <item>16:20</item>
+        <item>16:40</item>
+        <item>17:00</item>
+        <item>17:20</item>
+        <item>17:40</item>
+        <item>18:00</item>
+        <item>18:30</item>
+        <item>19:00</item>
+        <item>19:40</item>
+        <item>20:20</item>
+        <item>21:00</item>
+        <item>21:40</item>
+        <item>22:10</item>
+        <item>22:45</item>
+    </string-array>
+
+    <string-array name="iracemapolis_limeira_saturday">
+        <item>05:00</item>
+        <item>05:40</item>
+        <item>06:20</item>
+        <item>07:00</item>
+        <item>07:20</item>
+        <item>07:40</item>
+        <item>08:20</item>
+        <item>08:40</item>
+        <item>09:00</item>
+        <item>09:40</item>
+        <item>10:20</item>
+        <item>10:40</item>
+        <item>11:00</item>
+        <item>11:20</item>
+        <item>11:40</item>
+        <item>12:00</item>
+        <item>12:20</item>
+        <item>12:40</item>
+        <item>13:00</item>
+        <item>13:20</item>
         <item>14:00</item>
         <item>15:00</item>
         <item>16:00</item>
         <item>17:00</item>
         <item>18:00</item>
         <item>19:00</item>
-        <item>20:00</item><item>20:30</item>
-        <item>21:00</item><item>21:40</item>
+        <item>20:00</item>
+        <item>20:30</item>
+        <item>21:00</item>
+        <item>21:40</item>
         <item>22:45</item>
     </string-array>
 
     <string-array name="iracemapolis_limeira_sunday_and_holidays">
-        <item>05:00</item><item>05:40</item>
+        <item>05:00</item>
+        <item>05:40</item>
         <item>06:00</item>
         <item>07:00</item>
         <item>08:00</item>
@@ -60,44 +99,78 @@
         <item>17:00</item>
         <item>18:00</item>
         <item>19:00</item>
-        <item>20:00</item><item>20:30</item>
+        <item>20:00</item>
+        <item>20:30</item>
         <item>21:00</item>
         <item>22:45</item>
     </string-array>
 
     <string-array name="limeira_iracemapolis_monday_to_saturday">
         <item>05:30</item>
-        <item>06:00</item><item>06:20</item><item>06:40</item>
-        <item>07:00</item><item>07:20</item><item>07:40</item>
-        <item>08:00</item><item>08:20</item>
-        <item>09:00</item><item>09:20</item><item>09:40</item>
+        <item>06:00</item>
+        <item>06:20</item>
+        <item>06:40</item>
+        <item>07:00</item>
+        <item>07:20</item>
+        <item>07:40</item>
+        <item>08:00</item>
+        <item>08:20</item>
+        <item>09:00</item>
+        <item>09:20</item>
+        <item>09:40</item>
         <item>10:20</item>
-        <item>11:00</item><item>11:40</item>
-        <item>12:00</item><item>12:40</item>
-        <item>13:00</item><item>13:20</item><item>13:40</item>
-        <item>14:00</item><item>14:40</item>
-        <item>15:20</item><item>15:40</item>
-        <item>16:00</item><item>16:40</item>
-        <item>17:00</item><item>17:20</item><item>17:35</item>
-        <item>18:00</item><item>18:20</item><item>18:40</item>
-        <item>19:00</item><item>19:20</item><item>19:40</item>
+        <item>11:00</item>
+        <item>11:40</item>
+        <item>12:00</item>
+        <item>12:40</item>
+        <item>13:00</item>
+        <item>13:20</item>
+        <item>13:40</item>
+        <item>14:00</item>
+        <item>14:40</item>
+        <item>15:20</item>
+        <item>15:40</item>
+        <item>16:00</item>
+        <item>16:40</item>
+        <item>17:00</item>
+        <item>17:20</item>
+        <item>17:35</item>
+        <item>18:00</item>
+        <item>18:20</item>
+        <item>18:40</item>
+        <item>19:00</item>
+        <item>19:20</item>
+        <item>19:40</item>
         <item>20:20</item>
         <item>21:00</item>
-        <item>22:10</item><item>22:30</item><item>22:50</item>
+        <item>22:10</item>
+        <item>22:30</item>
+        <item>22:50</item>
         <item>23:15</item>
     </string-array>
 
     <string-array name="limeira_iracemapolis_saturday">
         <item>05:30</item>
         <item>06:20</item>
-        <item>07:00</item><item>07:40</item>
-        <item>08:00</item><item>08:20</item>
-        <item>09:00</item><item>09:20</item><item>09:40</item>
+        <item>07:00</item>
+        <item>07:40</item>
+        <item>08:00</item>
+        <item>08:20</item>
+        <item>09:00</item>
+        <item>09:20</item>
+        <item>09:40</item>
         <item>10:20</item>
-        <item>11:00</item><item>11:20</item><item>11:40</item>
-        <item>12:00</item><item>12:20</item><item>12:40</item>
-        <item>13:00</item><item>13:20</item><item>13:40</item>
-        <item>14:00</item><item>14:40</item>
+        <item>11:00</item>
+        <item>11:20</item>
+        <item>11:40</item>
+        <item>12:00</item>
+        <item>12:20</item>
+        <item>12:40</item>
+        <item>13:00</item>
+        <item>13:20</item>
+        <item>13:40</item>
+        <item>14:00</item>
+        <item>14:40</item>
         <item>15:30</item>
         <item>16:30</item>
         <item>17:30</item>
@@ -105,7 +178,8 @@
         <item>19:30</item>
         <item>20:30</item>
         <item>21:00</item>
-        <item>22:00</item><item>22:20</item>
+        <item>22:00</item>
+        <item>22:20</item>
         <item>23:15</item>
     </string-array>
 

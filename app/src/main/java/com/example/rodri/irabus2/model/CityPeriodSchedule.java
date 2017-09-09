@@ -1,4 +1,4 @@
-package com.example.rodri.irabus2.models;
+package com.example.rodri.irabus2.model;
 
 /**
  * Created by rrosatti on 9/9/17.

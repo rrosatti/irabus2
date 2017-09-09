@@ -1,17 +1,17 @@
-package com.example.rodri.irabus2.models;
+package com.example.rodri.irabus2.model;
 
 /**
  * Created by rrosatti on 9/9/17.
  */
 
-public class Period {
+public class City {
 
     private int id;
     private String name;
 
-    public Period() {}
+    public City() {}
 
-    public Period(int id, String name) {
+    public City (int id, String name) {
         this.id = id;
         this.name = name;
     }
