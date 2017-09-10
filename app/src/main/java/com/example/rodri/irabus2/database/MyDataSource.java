@@ -6,6 +6,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.rodri.irabus2.model.City;
+import com.example.rodri.irabus2.model.CityPeriod;
 import com.example.rodri.irabus2.model.CityPeriodSchedule;
 import com.example.rodri.irabus2.model.Period;
 
@@ -68,6 +69,14 @@ public class MyDataSource {
         return period;
     }
 
+    public CityPeriod cursorToCityPeriod(Cursor cursor) {
+        CityPeriod cityPeriod = new CityPeriod();
+        cityPeriod.setId(cursor.getInt(0));
+        cityPeriod.setCityId(cursor.getInt(1));
+        cityPeriod.setPeriodId(cursor.getInt(2));
+        return cityPeriod;
+    }
+
     public CityPeriodSchedule cursorToCityPeriodSchedule(Cursor cursor) {
         CityPeriodSchedule cityPeriodSchedule = new CityPeriodSchedule();
         cityPeriodSchedule.setId(cursor.getInt(0));
@@ -117,6 +126,46 @@ public class MyDataSource {
         cursor.close();
 
         return periods;
+    }
+
+    public CityPeriod getCityPeriod(int cityId, int periodId) {
+        Cursor cursor = db.query(helper.TABLE_CITY_PERIOD, cityPeriodColumns,
+                helper.COLUMN_CITY_ID + " = " + cityId + " AND " +
+                helper.COLUMN_PERIOD_ID + " = " + periodId,
+                null, null, null, null, null);
+
+        if (isCursorEmpty(cursor)) {
+            cursor.close();
+            return null;
+        }
+        cursor.moveToFirst();
+
+        CityPeriod cityPeriod = cursorToCityPeriod(cursor);
+        cursor.close();
+        return cityPeriod;
+    }
+
+    public List<CityPeriodSchedule> getCityPeriodSchedules(int cityId, int periodId) {
+        System.out.println("cityId = " + cityId + " periodId = " + periodId);
+        CityPeriod cityPeriod = getCityPeriod(cityId, periodId);
+        List<CityPeriodSchedule> cityPeriodSchedules = new ArrayList<>();
+        Cursor cursor = db.query(helper.TABLE_CITY_PERIOD_SCHEDULE, cityPeriodScheduleColumns,
+                helper.COLUMN_CITY_PERIOD_ID + " = " + cityPeriod.getId(),
+                null, null, null, null, null);
+
+        if (isCursorEmpty(cursor)) {
+            cursor.close();
+            return null;
+        }
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            cityPeriodSchedules.add(cursorToCityPeriodSchedule(cursor));
+            cursor.moveToNext();
+        }
+        cursor.close();
+
+        return cityPeriodSchedules;
     }
 
     /** --------- DELETE --------- */
